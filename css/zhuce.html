@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>注册</title><link rel=stylesheet href=../css/css/reset.css><link rel=stylesheet href=../css/css/dengli.css></head><body><img src=../images/25.jpg><div class=zindex><p>用户名：</p><input type=text class=text><br><p>密&nbsp;&nbsp;&nbsp;码：</p><input type=password class=pass><br><button class=login>注册</button></div><script>
+        var text=document.getElementsByClassName('text')[0];
+        var pass=document.getElementsByClassName('pass')[0];
+        var btn=document.getElementsByClassName('login')[0];
+        btn.onclick=function(){
+            var data=null;
+            var paga=null;
+            if(text.value&&pass.value){
+                if(window.localStorage.getItem('list')){
+                    data={'username':text.value,'password':pass.value};
+                    var dataJson=window.localStorage.getItem('list');
+                    console.log(dataJson);
+                    dataJson=eval('('+dataJson+')');
+                    
+                    for(var i=0;i<dataJson.length;i++){
+                        if(dataJson[i].username==data.username){
+                            alert('用户名重复');
+                            paga=1;
+                        }
+                    }
+                    if(paga==null){
+                        alert('注册成功');
+                        dataJson.push(data);
+                        dataJson=JSON.stringify(dataJson);
+                        window.localStorage.setItem('list',dataJson);
+                    }
+                }
+                else{
+                    data={'username':text.value,'password':pass.value}
+                    var arr=[];
+                    arr.push(data);
+                    arr=JSON.stringify(arr);
+                    window.localStorage.setItem('list',arr);
+                    alert('注册成功')
+                }
+            }
+        }
+    </script></body></html>

@@ -1,0 +1,46 @@
+body, html {
+  height: auto;
+  position: relative; }
+
+img {
+  width: 100%;
+  height: 100%; }
+
+.zindex {
+  position: absolute;
+  width: 258px;
+  height: 312px;
+  padding: 60px 70px;
+  top: 180px;
+  left: 755px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px; }
+
+.zindex p {
+  font-size: 16px;
+  font-weight: bold;
+  color: red; }
+
+.text {
+  display: block;
+  width: 250px;
+  height: 35px;
+  line-height: 35px; }
+
+.pass {
+  display: block;
+  width: 250px;
+  height: 35px;
+  line-height: 35px; }
+
+.login {
+  display: block;
+  width: 250px;
+  height: 35px;
+  background: red;
+  color: #fff;
+  line-height: 35px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px; }
